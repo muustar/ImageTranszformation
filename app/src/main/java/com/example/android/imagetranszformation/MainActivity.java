@@ -4,6 +4,7 @@ import android.media.Image;
 import android.media.ImageWriter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -20,7 +21,11 @@ public class MainActivity extends AppCompatActivity {
          * azért fut le mert Homérra kattintunk rá (persze ő épp nem látható)
          */
         ImageView bart = (ImageView) findViewById(R.id.bart_img);
-        bart.animate().translationXBy(-2000);
+        //bart.animate().translationXBy(-2000);
+
+        // Bart most a sarokba tesszük
+        bart.setTranslationY(-1000f);
+        bart.setTranslationX(-1000f);
 
     }
 
@@ -50,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
         */
 
         // Bart balról becsúszik
-        bart.animate().translationXBy(2000).setDuration(3000);
+        //bart.animate().translationXBy(2000).setDuration(3000);
 
-
+        // Bart "bepörög"
+        bart.animate().translationYBy(1000f).translationXBy(1000f).rotationBy(3600).setDuration(3000);
+        Log.i("FECO", "érintés lefut");
     }
 }
