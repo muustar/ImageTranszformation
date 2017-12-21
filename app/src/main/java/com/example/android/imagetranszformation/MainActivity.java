@@ -20,12 +20,12 @@ public class MainActivity extends AppCompatActivity {
          * ekkor Bart nincs a képben tehát rá nem is tudunk kattintatni, így az onClick esemény
          * azért fut le mert Homérra kattintunk rá (persze ő épp nem látható)
          */
-        ImageView bart = (ImageView) findViewById(R.id.bart_img);
+        //ImageView bart = (ImageView) findViewById(R.id.bart_img);
         //bart.animate().translationXBy(-2000);
 
         // Bart most a sarokba tesszük
-        bart.setTranslationY(-1000f);
-        bart.setTranslationX(-1000f);
+        //bart.setTranslationY(-1000f);
+        //bart.setTranslationX(-1000f);
 
     }
 
@@ -58,7 +58,15 @@ public class MainActivity extends AppCompatActivity {
         //bart.animate().translationXBy(2000).setDuration(3000);
 
         // Bart "bepörög"
-        bart.animate().translationYBy(1000f).translationXBy(1000f).rotationBy(3600).setDuration(3000);
-        Log.i("FECO", "érintés lefut");
+        //bart.animate().translationYBy(1000f).translationXBy(1000f).rotationBy(3600).setDuration(3000);
+        //Log.i("FECO", "érintés lefut");
+
+        // Bart kicsinyitése
+        if (bart.getScaleX()==1){
+            bart.animate().scaleX(0.5f).scaleY(0.5f).setDuration(3000);
+        } else {
+            bart.animate().scaleX(1f).scaleY(1f).setDuration(3000);
+        }
+
     }
 }
