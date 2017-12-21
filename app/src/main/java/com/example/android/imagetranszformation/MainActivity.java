@@ -13,6 +13,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Bart elhejezése a képernyőn kívül bal oldalra
+        /**
+         * ekkor Bart nincs a képben tehát rá nem is tudunk kattintatni, így az onClick esemény
+         * azért fut le mert Homérra kattintunk rá (persze ő épp nem látható)
+         */
+        ImageView bart = (ImageView) findViewById(R.id.bart_img);
+        bart.animate().translationXBy(-2000);
+
     }
 
     public void esemeny(View view){
@@ -36,9 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Bart 2000 ponttal lecsúszik a képernyőn
+        /*
         bart.animate().translationYBy(2000).setDuration(3000);
+        */
 
-
+        // Bart balról becsúszik
+        bart.animate().translationXBy(2000).setDuration(3000);
 
 
     }
