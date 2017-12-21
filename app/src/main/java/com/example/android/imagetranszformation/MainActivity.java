@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView homer = (ImageView) findViewById(R.id.homer_img);
 
         // Bart és Homér átteccővé válik és vissza
-
+        /*
         if (bart.getAlpha()==1){
             bart.animate().alpha(0f).setDuration(3000);
         } else {
@@ -32,6 +32,11 @@ public class MainActivity extends AppCompatActivity {
         } else {
             homer.animate().alpha(1f).setDuration(3000);
         }
+        */
+
+
+        // Bart 2000 ponttal lecsúszik a képernyőn
+        bart.animate().translationYBy(2000).setDuration(3000);
 
 
 
